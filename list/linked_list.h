@@ -1,14 +1,14 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-struct Node
+typedef struct
 {
-    Node *next;
-    void *value;
-} typedef Node;
+    void *next;
+    char value;
+} CharNode;
 
 
-Node *appendList(Node *current, int data_size, void *data);
-void printList(Node *item);
-
+void push(CharNode **head, char data);
+CharNode *createCharList();
+void printList(CharNode *head);
 #endif

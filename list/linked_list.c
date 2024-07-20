@@ -2,40 +2,28 @@
 #include <stdlib.h>
 #include "linked_list.h"
 
-void printList(Node *item)
+CharNode *createCharList()
 {
-    printf("%c -> ", *(char *)item->value);
-    if(item->next == NULL)
-    {
-        printf("\nEnd of list\n");
-    }
-    else
-    {
-        printList(item->next);
-    }
+    CharNode *head = NULL;
+    return head;
+}
+void push(CharNode **head, char data)
+{
+    CharNode *new = malloc(sizeof(CharNode));
+    new->next = *head;
+    new->value = data;
+    *head = new;
 }
 
 
-/**
- * @brief 
- * 
- * @param current 
- * @param data_size 
- * @param data 
- * @return Node* 
- */
-Node *appendList(Node *current, int data_size, void *data)
+void printList(CharNode *head)
 {
-    Node *new = (Node *)malloc(sizeof(Node));
-    new->next = NULL; 
-    new->value = malloc((size_t)data_size);
-    // Iterate through all bytes of data and cast to char pointer in
-    // order to copy
-    for(int i = 0; i < data_size; i++)
+    while (head != NULL)
     {
-        *(char *)(new->value + i) = *(char*)(data + i);
+        printf("Head is on adress %p\n", head);
+        printf("Head has value '%c'\n", head->value);
+        CharNode *temp = head->next;
+        head = temp;
     }
-    current->next = new;
-
+    
 }
-
