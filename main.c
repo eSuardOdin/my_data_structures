@@ -10,6 +10,12 @@ int main(int argc, char *argv)
     push(&list, 'b');
     push(&list, 'c');
 
-    printList(list);
+    // printList(list);
+    isElementPresent('b', list);
+    isElementPresent('d', list);
+    push(&list, 'd');
+    isElementPresent('d', list);
+
+
     return 0;
 }

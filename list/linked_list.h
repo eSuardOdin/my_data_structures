@@ -11,4 +11,5 @@ typedef struct
 void push(CharNode **head, char data);
 CharNode *createCharList();
 void printList(CharNode *head);
+int isElementPresent(char el, CharNode *head);
 #endif
